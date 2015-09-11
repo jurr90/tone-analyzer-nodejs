@@ -514,18 +514,18 @@ umviz.models.toneGenome = function() {
        * (3) null: not a mixed node, treat it as positive correlation;
        */
       function highlightWordCategory(cate, corr) {
-        $('#output_div').css('color', '#ddd');
-        $('.matched-word').css('opacity', 0.2);
+        d3.select('#output_div').style('color', '#ddd');
+        d3.selectAll('.matched-word').style('opacity', 0.2);
 
         if (corr === null)
-          $('.' + cate + '_' + corrType.positive).css('opacity', 1);
+          d3.selectAll('.' + cate + '_' + corrType.positive).style('opacity', 1);
         else
-          $('.' + cate + '_' + corr).css('opacity', 1);
+          d3.selectAll('.' + cate + '_' + corr).style('opacity', 1);
       }
 
       function unhighlightWordCategory() {
-        $('#output_div').css('color', '#666');
-        $('.matched-word').css('opacity', 1);
+        d3.select('#output_div').style('color', '#666');
+        d3.selectAll('.matched-word').style('opacity', 1);
       }
     });
 
